@@ -1,6 +1,7 @@
 $( document ).ready(
     function() {
-        bindModuleView()
+        //bindModuleView();
+        bindJSCore();
     }
 )
 
@@ -17,6 +18,21 @@ function bindModuleView() {
                 }
             );
 
+        }
+    )
+}
+
+function bindJSCore() {
+    $( '.search' ).click(
+        function() {
+            var q = $( '.text' ).val();
+            jQuery.ez(
+                    "Search::search::" + q,
+                    {},
+                    function( data ) {
+                        $( '.result' ).html( data.content );
+                    }
+            );
         }
     )
 }

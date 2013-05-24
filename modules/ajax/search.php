@@ -8,15 +8,8 @@
 
 $http = eZHTTPTool::instance();
 $q = $http->hasVariable( 'q' ) ? $http->variable( 'q' ) : false;
-if ( !$q )
-{
-    echo '';
-    eZExecution::cleanExit();
-}
 
-$params = array();
-
-$searchResult = eZSearch::search( $q, $params );
+$searchResult = eZSearch::search( $q, array() );
 
 $tpl = eZTemplate::factory();
 $tpl->setVariable( 'list', $searchResult['SearchResult'] );
