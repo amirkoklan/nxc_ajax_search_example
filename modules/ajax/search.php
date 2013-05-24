@@ -13,10 +13,8 @@ if ( !$q )
     echo '';
     eZExecution::cleanExit();
 }
-$params = array(
-            "SearchSubTreeArray" => array( 2 ),
-            "SearchLimit" => 10,
-            "SearchOffset" => 0 );
+
+$params = array();
 
 $searchResult = eZSearch::search( $q, $params );
 
