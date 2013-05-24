@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
 <html>
     <head>
+        {ezcss_load()}
+        {ezscript_load()}
     </head>
     <body>
-
+        {$module_result.content}
     </body>
 </html>
